@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.centodonzamora.ShortsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+           >
+
+            <TextView
+                android:id="@+id/textViewNombre"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="Nombre"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewDNI"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="DNI" />
+
+            <Button
+                android:id="@+id/btnEditar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Editar" />
+
+            <Button
+                android:id="@+id/btnEliminar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Eliminar" />
+        </LinearLayout>
+
+        <!-- Lista de Pacientes -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewPacientes"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="8dp" />
+
+        <!-- Detalle del Paciente -->
+        <LinearLayout
+            android:id="@+id/detallePacienteLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:padding="8dp"
+            android:background="@android:color/darker_gray">
+
+            <TextView
+                android:id="@+id/textDetalleNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombre: "
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textDetalleApellido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Apellido: "
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textDetalleDNI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DNI: "
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textDetalleEdad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Edad: "
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textDetalleTelefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Teléfono: "
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/textDetalleDireccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Direccion: "
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/textDetalleServicio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Servicio: "
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textDetalleFecha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fecha: "
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textDetalleDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Descripción: "
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</FrameLayout>
