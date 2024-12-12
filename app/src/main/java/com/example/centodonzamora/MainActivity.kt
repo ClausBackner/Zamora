@@ -26,9 +26,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var fab: FloatingActionButton
     private lateinit var bottomNavigationView: BottomNavigationView
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        setContentView(R.layout.activity_main)//cambio (R.layout.activity_main)
 
         // Inicialización de vistas
         drawerLayout = findViewById(R.id.drawer_layout)
@@ -64,6 +66,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
+
+
     // Método para reemplazar fragmentos
     private fun replaceFragment(fragment: Fragment) {
         val fragmentManager = supportFragmentManager
@@ -80,7 +85,7 @@ class MainActivity : AppCompatActivity() {
 
         // Inicialización de vistas del diálogo
         val nuevaCitaLayout = dialog.findViewById<LinearLayout>(R.id.layoutNuevaCita)
-        val shortsLayout = dialog.findViewById<LinearLayout>(R.id.layoutShorts)
+        val graficaLayout = dialog.findViewById<LinearLayout>(R.id.lineGrafica)
         val liveLayout = dialog.findViewById<LinearLayout>(R.id.layoutLive)
         val cancelButton = dialog.findViewById<ImageView>(R.id.cancelButton)
 
@@ -95,9 +100,9 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        shortsLayout.setOnClickListener {
+        graficaLayout?.setOnClickListener {
             dialog.dismiss()
-            Toast.makeText(this, "Create a short is clicked", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Abrir gráfico", Toast.LENGTH_SHORT).show()
         }
 
         liveLayout.setOnClickListener {

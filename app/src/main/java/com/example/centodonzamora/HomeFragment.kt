@@ -1,74 +1,48 @@
 package com.example.centodonzamora
-import android.graphics.Color
+
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.zamora.databinding.FragmentHomeBinding
-import com.github.mikephil.charting.components.Description
-import com.github.mikephil.charting.data.Entry
-import com.github.mikephil.charting.data.LineData
-import com.github.mikephil.charting.data.LineDataSet
+import com.example.zamora.R
+
+private const val ARG_PARAM1 = "param1"
+private const val ARG_PARAM2 = "param2"
+
 
 class HomeFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
-    private val binding get() = _binding!!
+    // TODO: Rename and change types of parameters
+    private var param1: String? = null
+    private var param2: String? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            param1 = it.getString(ARG_PARAM1)
+            param2 = it.getString(ARG_PARAM2)
+        }
+    }
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        return binding.root
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    companion object {
 
-        Log.d("HomeFragment", "HomeFragment cargado")
-
-        // Crear datos mínimos para el gráfico
-        val entries = listOf(
-            Entry(0f, 1f),
-            Entry(1f, 2f),
-            Entry(2f, 3f)
-        )
-
-        val dataSet = LineDataSet(entries, "Datos de Prueba").apply {
-            color = Color.BLUE
-            valueTextColor = Color.RED
-            lineWidth = 2f
-            circleRadius = 4f
-            setCircleColor(Color.GREEN)
-        }
-
-        val lineData = LineData(dataSet)
-
-        // Configurar el gráfico
-        binding.lineChart.apply {
-            data = lineData
-            description = Description().apply {
-                text = "Gráfico de Prueba"
-                textColor = Color.BLACK
-                textSize = 12f
+        @JvmStatic
+        fun newInstance(param1: String, param2: String) =
+            HomeFragment().apply {
+                arguments = Bundle().apply {
+                    putString(ARG_PARAM1, param1)
+                    putString(ARG_PARAM2, param2)
+                }
             }
-            setTouchEnabled(true)
-            isDragEnabled = true
-            setScaleEnabled(true)
-            animateX(1000)
-            invalidate()
-        }
-
-        Log.d("HomeFragment", "LineChart configurado con ${entries.size} entradas")
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }
 

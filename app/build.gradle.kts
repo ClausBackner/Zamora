@@ -8,14 +8,16 @@ plugins {
 android {
 
     defaultConfig {
-        applicationId = "com.example.zamora" // Cambia esto por el ID de tu aplicación
+        applicationId = "com.example.zamora"
         minSdk = 26
         //noinspection EditedTargetSdkVersion
         targetSdk = 35
         compileSdk = 35
         versionCode = 1
         versionName = "1.0"
+
     }
+
     namespace = "com.example.zamora"
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -33,7 +35,12 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+
+
+
+
 }
+
 
 
 
@@ -57,10 +64,10 @@ dependencies {
     implementation (libs.converter.gson)
     implementation (libs.gson)
 
-    // conector para MySql
-    implementation(files("libs/mysql-conector-java-5.1.49.jar"))
+
     // Libreria Pcs (utilidades)
     implementation(libs.libreria.pcs)
+    implementation (libs.clickablepiechart)
 
     implementation(libs.androidx.material)
     implementation(libs.androidx.runtime)
@@ -68,6 +75,8 @@ dependencies {
     implementation (libs.androidx.core.ktx.v1101)
     implementation (libs.androidx.navigation.fragment.ktx)
     implementation(libs.android.holo.graph)
+    implementation(libs.androidx.slice.core)
+    implementation(libs.play.services.maps)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
